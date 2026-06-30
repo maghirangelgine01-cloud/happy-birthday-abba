@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Abba! 🎂</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <div id="sparkles-bg"></div>
+
+  <!-- Overlay -->
+  <div id="overlay">
+    <div class="overlay-content">
+      <div class="overlay-emoji">🎀</div>
+      <h2>A special message<br/>is waiting for you...</h2>
+      <p class="overlay-sub">for <strong>Abba T. Esteron</strong></p>
+      <button id="startBtn">Open Your Gift 🎁</button>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div id="main" class="hidden">
+
+    <button id="muteBtn" title="Toggle music">🔊</button>
+    <div id="hearts-container"></div>
+
+    <!-- ===== SCATTERED PHOTOS (outside card) ===== -->
+    <!-- Each photo is absolutely positioned around the scene -->
+
+    <div class="photo-scatter p1" style="--tilt:-12deg">
+      <img src="assets/photo1.jpg" alt="" onerror="this.src='assets/placeholder.png'"/>
+      <span>💕</span>
+    </div>
+
+    <div class="photo-scatter p2" style="--tilt:8deg">
+      <img src="assets/photo2.jpg" alt="" onerror="this.src='assets/placeholder.png'"/>
+      <span>🌸</span>
+    </div>
+
+    <div class="photo-scatter p3" style="--tilt:-6deg">
+      <img src="assets/photo3.jpg" alt="" onerror="this.src='assets/placeholder.png'"/>
+      <span>⭐</span>
+    </div>
+
+    <div class="photo-scatter p4" style="--tilt:14deg">
+      <img src="assets/photo4.jpg" alt="" onerror="this.src='assets/placeholder.png'"/>
+      <span>🌷</span>
+    </div>
+
+    <div class="photo-scatter p5" style="--tilt:-10deg">
+      <img src="assets/photo5.jpg" alt="" onerror="this.src='assets/placeholder.png'"/>
+      <span>🦋</span>
+    </div>
+
+    <div class="photo-scatter p6" style="--tilt:7deg">
+      <img src="assets/photo6.jpg" alt="" onerror="this.src='assets/placeholder.png'"/>
+      <span>🎶</span>
+    </div>
+
+    <div class="photo-scatter p7" style="--tilt:-5deg">
+      <img src="assets/photo7.jpg" alt="" onerror="this.src='assets/placeholder.png'"/>
+      <span>💖</span>
+    </div>
+
+    <div class="photo-scatter p8" style="--tilt:9deg">
+      <img src="assets/photo8.jpg" alt="" onerror="this.src='assets/placeholder.png'"/>
+      <span>🌙</span>
+    </div>
+
+    <div class="photo-scatter p9" style="--tilt:-11deg">
+      <img src="assets/photo9.jpg" alt="" onerror="this.src='assets/placeholder.png'"/>
+      <span>🍓</span>
+    </div>
+
+    <div class="photo-scatter p10" style="--tilt:6deg">
+      <img src="assets/photo10.jpg" alt="" onerror="this.src='assets/placeholder.png'"/>
+      <span>🌻</span>
+    </div>
+
+    <div class="photo-scatter p11" style="--tilt:-8deg">
+      <img src="assets/photo11.jpg" alt="" onerror="this.src='assets/placeholder.png'"/>
+      <span>🎀</span>
+    </div>
+
+    <!-- ===== CARD (center) ===== -->
+    <div class="card">
+      <div class="ribbon">🎀 Happy Birthday 🎀</div>
+
+      <h1 class="heading">
+        <span id="mainText"></span><span class="cursor" id="cursor1">|</span>
+      </h1>
+      <p class="name-tag">✨ Abba ✨</p>
+
+      <!-- Cake -->
+      <div class="cake-center">
+        <div class="cake" id="cake" title="Click to blow out the candles!">
+          <div class="candles">
+            <div class="candle"><div class="flame" id="flame1"></div></div>
+            <div class="candle"><div class="flame" id="flame2"></div></div>
+            <div class="candle"><div class="flame" id="flame3"></div></div>
+          </div>
+          <div class="cake-top">🎂</div>
+        </div>
+        <p class="cake-hint">Click me! 🕯️</p>
+        <p class="wish-msg hidden" id="wishMsg">🌟 Make a Wish! 🌟</p>
+      </div>
+
+    </div>
+
+  </div><!-- end #main -->
+
+  <!-- Message Modal -->
+  <div id="msgModal" class="modal-backdrop hidden">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-header">💌 A Message For You</div>
+      <div class="modal-body" id="modalBody">
+        <span id="msgText"></span><span class="cursor" id="cursor2">|</span>
+      </div>
+      <!-- After message is done, this button appears -->
+      <button class="watch-btn hidden" id="watchBtn">▶ Watch a Memory 🎬</button>
+    </div>
+  </div>
+
+  <!-- Video Modal -->
+  <div id="videoModal" class="modal-backdrop hidden">
+    <div class="modal-box video-modal-box">
+      <button class="modal-close" id="videoClose">✕</button>
+      <div class="modal-header">🎬 A Memory For You</div>
+      <video id="memoryVideo" controls playsinline>
+        <source src="assets/memory.mp4" type="video/mp4"/>
+        Your browser does not support video.
+      </video>
+    </div>
+  </div>
+
+  <div id="confetti-container"></div>
+
+  <audio id="bgMusic" loop>
+    <source src="assets/music.mp3" type="audio/mpeg"/>
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
